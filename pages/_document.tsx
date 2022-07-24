@@ -1,13 +1,8 @@
-import Document, { DocumentContext, DocumentInitialProps } from "next/document";
+import Document from "next/document";
+import { createGetInitialProps } from "@mantine/next";
 
-class CustomDocument extends Document {
-    static async getInitialProps(
-        ctx: DocumentContext,
-    ): Promise<DocumentInitialProps> {
-        const initialProps = await Document.getInitialProps(ctx);
+const getInitialProps = createGetInitialProps();
 
-        return initialProps;
-    }
+export default class _Document extends Document {
+    static getInitialProps = getInitialProps;
 }
-
-export default CustomDocument;

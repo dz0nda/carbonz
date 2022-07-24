@@ -1,6 +1,5 @@
 # carbonz
 
-
 This project was generated with [superplate](https://github.com/pankod/superplate).
 
 ## Getting Started
@@ -9,19 +8,19 @@ superplate is a Next.js all-in-one project generator. Create your project with t
 
 ## Available Scripts
 
-### Running the development server.
+### Running the development server
 
 ```bash
     yarn dev
 ```
 
-### Building for production.
+### Building for production
 
 ```bash
     yarn build
 ```
 
-### Running the production server.
+### Running the production server
 
 ```bash
     yarn start
@@ -29,22 +28,11 @@ superplate is a Next.js all-in-one project generator. Create your project with t
 
 ## Learn More
 
-To learn more about **superplate**, please check out the [Documentation](https://github.com/pankod/superplate).
-
-
-### **CSS / styled-jsx**
-
-Next.js comes with built-in support for CSS and styled-jsx. Styled-jsx is full, scoped and component-friendly CSS support for JSX (rendered on the server or the client).
-
-[Go To Documentation](https://github.com/vercel/styled-jsx)
-
-
 ### **Axios**
 
 Promise based HTTP client for the browser and node.js.
 
 [Go To Documentation](https://github.com/axios/axios)
-
 
 ### **Environment Variables**
 
@@ -52,13 +40,11 @@ Use environment variables in your next.js project for server side, client or bot
 
 [Go To Documentation](https://github.com/vercel/next.js/tree/canary/examples/environment-variables)
 
-
 ### **Zustand**
 
 A small, fast and scalable bearbones state-management solution using simplified flux principles.
 
 [Go To Documentation](https://github.com/pmndrs/zustand)
-
 
 ### **ESLint**
 
@@ -66,13 +52,11 @@ A pluggable and configurable linter tool for identifying and reporting on patter
 
 [Go To Documentation](https://eslint.org/docs/user-guide/getting-started)
 
-
 ### **Prettier**
 
 An opinionated code formatter; Supports many languages; Integrates with most editors.
 
 [Go To Documentation](https://prettier.io/docs/en/index.html)
-
 
 ### **lint-staged**
 
@@ -80,21 +64,11 @@ An opinionated code formatter; Supports many languages; Integrates with most edi
 
 [Go To Documentation](https://github.com/okonet/lint-staged)
 
-
 ### **Docker**
 
 Docker simplifies and accelerates your workflow, while giving developers the freedom to innovate with their choice of tools, application stacks, and deployment environments for each project.
 
 [Go To Documentation](https://www.docker.com/get-started)
-
-
-### **no**
-
-
-
-[Go To Documentation]()
-
-
 
 ## License
 
