@@ -1,7 +1,11 @@
 import { FC, useEffect } from "react";
 import { useRouter } from "next/router";
 import { AppShell, Container, Paper, SimpleGrid, Divider } from "@mantine/core";
-import { validateAddress } from "@taquito/utils";
+import {
+    validateAddress,
+    validatePublicKey,
+    validateContractAddress,
+} from "@taquito/utils";
 
 import { useStore } from "@store/store";
 import { Header } from "@components/header";
@@ -9,6 +13,7 @@ import { HowItWorks } from "@components/how-it-works";
 import { SearchBar } from "@components/search-bar";
 import { ConnectButton } from "@components/connect-button";
 import { ResultCard } from "@components/result-card";
+import { ResultCardContract } from "@components/result-card-contract";
 import { useStyles } from "@styles/index.styles";
 
 const Home: FC = () => {
@@ -16,12 +21,21 @@ const Home: FC = () => {
     const { address, setAddress } = useStore();
     const { classes } = useStyles();
 
+    const validateAbstract = (
+        address: string,
+        validateFn: (value: string) => number,
+    ) => {
+        return validateFn(address) === 3 ? true : false;
+    };
+
     useEffect(() => {
         if (router.query.address) {
-            if (validateAddress(String(router.query.address)) < 3) {
-                router.push("/");
-            } else {
+            if (
+                validateAbstract(String(router.query.address), validateAddress)
+            ) {
                 setAddress(String(router.query.address));
+            } else {
+                router.push("/");
             }
         }
     }, [router.query]);
@@ -46,7 +60,12 @@ const Home: FC = () => {
                             </div>
                         </div>
 
-                        {address && <ResultCard />}
+                        {address &&
+                        validateAbstract(address, validateContractAddress) ? (
+                            <ResultCardContract />
+                        ) : (
+                            <ResultCard />
+                        )}
                     </div>
                 </Paper>
             </Container>

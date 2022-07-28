@@ -8,6 +8,7 @@ import { G_CO2_PER_GAS } from "@services/constants";
 import { useStore } from "@store/store";
 import { useApi } from "@hooks/useApi";
 import { useStyles } from "@styles/result.styles";
+import { TextHighlight } from "@components/text-highlight";
 
 export const ResultCard: FC = () => {
     const { classes } = useStyles();
@@ -15,14 +16,29 @@ export const ResultCard: FC = () => {
     const { data, isLoading } = useApi(address);
     const largeScreen = useMediaQuery("(min-width: 400px)");
 
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const TextHighlight = (props: { children: any }) => {
+    if (isLoading) {
         return (
-            <Text component="span" size="md" className={classes.primaryTitle}>
-                {props.children}
-            </Text>
+            <Center className={classes.contacts}>
+                <Loader color="white" />
+            </Center>
         );
-    };
+    }
+
+    if (!data.length) {
+        return (
+            <Center className={classes.contacts}>
+                <Stack className={classes.stack}>
+                    <Text size="md">
+                        Contract{" "}
+                        <TextHighlight>
+                            {largeScreen ? address : getShortPkh(address)}
+                        </TextHighlight>
+                    </Text>
+                    <Text size="md">This address has no transactions yet.</Text>
+                </Stack>
+            </Center>
+        );
+    }
 
     return (
         <Center className={classes.contacts}>

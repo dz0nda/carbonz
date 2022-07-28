@@ -22,7 +22,7 @@ export const SearchBar: FC = () => {
     return (
         <form>
             <TextInput
-                placeholder="Enter Tezos address / domain"
+                placeholder="Enter Tezos address / contract"
                 size="md"
                 error={error}
                 aria-label="My input"
