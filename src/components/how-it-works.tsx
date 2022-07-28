@@ -44,7 +44,16 @@ export const HowItWorks: FC = () => {
                     {" 2.4E-4 g CO2 eq. per unit of gas "}
                 </Text>
                 .<br />
-                <Anchor size="sm">Read more.</Anchor>
+                <Anchor>
+                    <Text
+                        component="a"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href="https://tezos.com/carbon"
+                    >
+                        Read more.
+                    </Text>
+                </Anchor>
             </Text>
         </>
     );

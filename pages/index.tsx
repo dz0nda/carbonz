@@ -35,6 +35,7 @@ const Home: FC = () => {
             ) {
                 setAddress(String(router.query.address));
             } else {
+                setAddress("");
                 router.push("/");
             }
         }
@@ -60,12 +61,12 @@ const Home: FC = () => {
                             </div>
                         </div>
 
-                        {address &&
+                        {address.length &&
                         validateAbstract(address, validateContractAddress) ? (
                             <ResultCardContract />
-                        ) : (
+                        ) : validateAbstract(address, validatePublicKey) ? (
                             <ResultCard />
-                        )}
+                        ) : null}
                     </div>
                 </Paper>
             </Container>

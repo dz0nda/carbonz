@@ -91,7 +91,7 @@ export const ResultCardContract: FC = () => {
                 </Text>
 
                 <Text size="md">
-                    {"The average gas consumption for this address is "}
+                    {"The average gas consumption for this contract is "}
                     <TextHighlight>
                         {formatNumber(mean(data.map((tx: any) => tx.gasUsed)))}{" "}
                         gas
@@ -107,7 +107,7 @@ export const ResultCardContract: FC = () => {
                 </Text>
 
                 <Text size="md">
-                    {"The median gas consumption for this address is "}
+                    {"The median gas consumption for this contract is "}
                     <TextHighlight>
                         {formatNumber(
                             median(data.map((tx: any) => tx.gasUsed)),
