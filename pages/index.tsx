@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import { AppShell, Container, Paper, SimpleGrid, Divider } from "@mantine/core";
 import {
     validateAddress,
-    validatePublicKey,
+    validateKeyHash,
     validateContractAddress,
 } from "@taquito/utils";
 
@@ -64,7 +64,7 @@ const Home: FC = () => {
                         {address.length &&
                         validateAbstract(address, validateContractAddress) ? (
                             <ResultCardContract />
-                        ) : validateAbstract(address, validatePublicKey) ? (
+                        ) : validateAbstract(address, validateKeyHash) ? (
                             <ResultCard />
                         ) : null}
                     </div>

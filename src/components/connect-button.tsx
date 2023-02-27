@@ -14,7 +14,7 @@ export const ConnectButton: FC = () => {
             await wallet?.requestPermissions({
                 network: {
                     type: NetworkType.MAINNET,
-                    rpcUrl: "https://mainnet.api.tez.ie",
+                    rpcUrl: "https://rpc.tzbeta.net",
                 },
             });
             const address = await wallet?.getPKH();
