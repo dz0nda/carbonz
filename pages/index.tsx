@@ -1,6 +1,13 @@
 import { FC, useEffect } from "react";
 import { useRouter } from "next/router";
-import { AppShell, Container, Paper, SimpleGrid, Divider } from "@mantine/core";
+import {
+    AppShell,
+    Container,
+    Paper,
+    SimpleGrid,
+    Divider,
+    Text,
+} from "@mantine/core";
 import {
     validateAddress,
     validateKeyHash,
@@ -56,6 +63,9 @@ const Home: FC = () => {
 
                                 <SimpleGrid cols={1}>
                                     <SearchBar />
+                                    <Text align="center" weight="bold">
+                                        OR
+                                    </Text>
                                     <ConnectButton />
                                 </SimpleGrid>
                             </div>

@@ -29,7 +29,13 @@ export const SearchBar: FC = () => {
                 ref={ref}
                 onChange={() => setLabel(ref.current?.value || "")}
                 rightSection={
-                    <ActionIcon variant="transparent" onClick={submit}>
+                    <ActionIcon
+                        variant="light"
+                        color="blue"
+                        size="md"
+                        radius="md"
+                        onClick={submit}
+                    >
                         <FiSearch />
                     </ActionIcon>
                 }
